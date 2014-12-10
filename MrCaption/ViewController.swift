@@ -50,14 +50,14 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
         
         //设置格子类型
         var nib = UINib(nibName: "createTableViewCell", bundle: nil)
-        var nib2 = UINib(nibName: "addTableViewCell", bundle: nil)
-        var nib3 = UINib(nibName: "watermarkTableViewCell", bundle: nil)
+        var nib2 = UINib(nibName: "watermarkTableViewCell", bundle: nil)
+        var nib3 = UINib(nibName: "addTableViewCell", bundle: nil)
         var nib4 = UINib(nibName: "bottomTableViewCell", bundle: nil)
 
 
         tableView.registerNib(nib, forCellReuseIdentifier: "createCell")
-        tableView.registerNib(nib2, forCellReuseIdentifier: "addCell")
-        tableView.registerNib(nib3, forCellReuseIdentifier: "watermarkCell")
+        tableView.registerNib(nib2, forCellReuseIdentifier: "watermarkCell")
+        tableView.registerNib(nib3, forCellReuseIdentifier: "addCell")
         tableView.registerNib(nib4, forCellReuseIdentifier: "bottomCell")
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -87,8 +87,8 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:createTableViewCell = tableView.dequeueReusableCellWithIdentifier("createCell") as createTableViewCell
-        var addcell:addTableViewCell = tableView.dequeueReusableCellWithIdentifier("addCell") as addTableViewCell
         var watercell:watermarkTableViewCell = tableView.dequeueReusableCellWithIdentifier("watermarkCell") as watermarkTableViewCell
+        var addcell:addTableViewCell = tableView.dequeueReusableCellWithIdentifier("addCell") as addTableViewCell
         var bottomcell:bottomTableViewCell = tableView.dequeueReusableCellWithIdentifier("bottomCell") as bottomTableViewCell
              println("image set#\(indexPath.row)")
        
@@ -108,30 +108,29 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
         
     }
     
-    /**
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!){
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    println("You selected cell at section \(indexPath.section), row at #\(indexPath.row)!")
-    switch indexPath.row
+    println("selected")
+        if indexPath.section == 0
+    {
+        switch indexPath.row
     {
     case 0:
-    println("111")
-    let cell = tableView.cellForRowAtIndexPath(indexPath)
-    let content = cell?.contentView
-    SJAvatarBrowser.showImage(content?.subviews[0] as UIImageView)
+    println("select section \(indexPath.section), row #\(indexPath.row)!")
+
     case 1:
-    println("222")
-    let cell = tableView.cellForRowAtIndexPath(indexPath)
-    let content = cell?.contentView
-    SJAvatarBrowser.showImage(content?.subviews[0] as UIImageView)
+    println("select section \(indexPath.section), row #\(indexPath.row)!")
+
     case 2:
-    println("333")
+    println("select section \(indexPath.section), row #\(indexPath.row)!")
     
-    let cell = tableView.cellForRowAtIndexPath(indexPath)
-    let content = cell?.contentView
+    //  let cell = tableView.cellForRowAtIndexPath(indexPath)
+  //  let content = cell?.contentView
+ //   SJAvatarBrowser.showImage(content?.subviews[0] as UIImageView)
     
-    SJAvatarBrowser.showImage(content?.subviews[0] as UIImageView)
-    
+            
+    /**
     case 3:
     let alert = UIAlertController(title: "还在画的说～",
     message: "On the way laaaa~",
@@ -140,22 +139,47 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
     handler: nil)
     alert.addAction(action)
     presentViewController(alert,animated: true, completion: nil)
+      **/
+            
     default:
     println("false")
+        }
+        }
+    
+        if indexPath.section == 1
+        {
+            switch indexPath.row
+            {
+            case 0:
+                println("select section \(indexPath.section), row #\(indexPath.row)!")
+                
+            case 1:
+                println("select section \(indexPath.section), row #\(indexPath.row)!")
+                
+            case 2:
+                println("select section \(indexPath.section), row #\(indexPath.row)!")
+                
+            default:
+                println("false")
+            }
+        }
+        
     }
-    }
-    **/
+    
     
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             items.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        tableView.reloadData()
+        
+            tableView.reloadSections(<#sections: NSIndexSet#>, withRowAnimation: <#UITableViewRowAnimation#>.Automatic)
+            
         }
     }
     
-
+    
+    /**
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         // 1
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "拖出" ,  handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
@@ -184,10 +208,6 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
             
 
         // 3
-
-
-    
-    
      /**
         var rotateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Rate" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 4
@@ -207,7 +227,7 @@ class createPageViewController: UIViewController,UITableViewDataSource, UITableV
       //  return [deleteAction,rotateAction]
          return [deleteAction]
     }
-    
+    **/
  
         
 

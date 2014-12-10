@@ -380,6 +380,7 @@
 				PROVISIONING_PROFILE = "c77c6e75-c559-47fd-8aeb-f58c63f7f630";
 				SWIFT_OBJC_BRIDGING_HEADER = "MrCaption/MrCaption-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -397,6 +398,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c77c6e75-c559-47fd-8aeb-f58c63f7f630";
 				SWIFT_OBJC_BRIDGING_HEADER = "MrCaption/MrCaption-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

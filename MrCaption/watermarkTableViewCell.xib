@@ -7,18 +7,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="watermarkTableViewCell" customModule="MrCaption" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="316" height="38"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="30" id="KGk-i7-Jjw" customClass="watermarkTableViewCell" customModule="MrCaption" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_watermark" translatesAutoresizingMaskIntoConstraints="NO" id="y2d-oS-euk">
-                        <rect key="frame" x="0.0" y="0.0" width="316" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="312" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="312" id="alG-Fn-10R"/>
+                            <constraint firstAttribute="height" constant="30" id="hEY-cu-nNe"/>
+                        </constraints>
                     </imageView>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Power by  字幕君 APP" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyR-Ld-jqh">
-                        <rect key="frame" x="195" y="11.5" width="108" height="12"/>
+                        <rect key="frame" x="191" y="8" width="108" height="12"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -29,10 +33,10 @@
                     <constraint firstItem="gyR-Ld-jqh" firstAttribute="centerY" secondItem="y2d-oS-euk" secondAttribute="centerY" constant="-1" id="Vit-fV-D2b"/>
                     <constraint firstItem="y2d-oS-euk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cGc-3J-60z"/>
                     <constraint firstItem="gyR-Ld-jqh" firstAttribute="trailing" secondItem="y2d-oS-euk" secondAttribute="trailing" constant="-13" id="i4h-P0-I40"/>
-                    <constraint firstAttribute="bottom" secondItem="y2d-oS-euk" secondAttribute="bottom" constant="0.5" id="iEP-Ui-STT"/>
+                    <constraint firstAttribute="bottom" secondItem="y2d-oS-euk" secondAttribute="bottom" id="iEP-Ui-STT"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="190.5" y="204"/>
+            <point key="canvasLocation" x="190" y="204"/>
         </tableViewCell>
     </objects>
     <resources>
